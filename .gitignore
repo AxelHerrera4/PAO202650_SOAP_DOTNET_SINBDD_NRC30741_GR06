@@ -1,0 +1,92 @@
+# .NET / IIS
+**/bin/
+**/obj/
+**/packages/
+**/*.csproj.user
+**/*.sln.user
+**/*.user
+**/*.suo
+**/*.ncb
+**/*.VC.db
+**/ipch/
+**/*.log
+**/*.ldf
+**/*.mdf
+**/App_Data/
+**/.vs/
+**/*.DotSettings
+**/packages.config
+
+# Visual Studio
+**/.vs/
+**/bin/
+**/obj/
+**/*.csproj.user
+
+# React / Web
+**/dist/
+**/build/
+**/node_modules/
+**/.dist/
+**/.cache/
+**/coverage/
+**/.env.local
+**/.env.*.local
+
+# React Native / Expo / Mobile
+**/.expo/
+**/node_modules/
+**/.expo-shared/
+**/*.jks
+**/*.keystore
+**/*.p8
+**/*.p12
+**/*.key
+**/*.mobileprovision
+**/*.orig.*
+**/web-build/
+
+# Package managers
+**/npm-debug.log*
+**/npm-error.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/pnpm-debug.log*
+
+# OS Files
+.DS_Store
+Thumbs.db
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# IDE / Editors
+**/.vscode/
+**/.idea/
+**/.sublime-project
+**/.sublime-workspace
+*.swp
+*.swo
+*~
+*.vim
+.editorconfig
+.env
+
+# Dependencies
+**/node_modules/
+**/venv/
+**/__pycache__/
+
+# Build artifacts
+**/dist/
+**/build/
+**/target/
+**/*.war
+**/*.jar
+
+# Temporary files
+**/temp/
+**/tmp/
+**/.tmp/
+**/*.tmp
