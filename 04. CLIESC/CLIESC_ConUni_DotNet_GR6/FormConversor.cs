@@ -81,18 +81,58 @@ namespace CLIESC_ConUni_DotNet_GR6
             this.Close();
         }
 
-        private void btnConvertir_Click(object sender, EventArgs e)
+        private async void btnConvertir_Click(object sender, EventArgs e)
         {
-            // Aquí se implementará la llamada real al servicio SOAP para las conversiones.
-            // Por ahora, se simula.
             if (!double.TryParse(txtValor.Text, out double valor))
             {
                 MessageBox.Show("Por favor, ingrese un valor numérico válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            string operacion = cmbOperacion.SelectedItem.ToString();
-            lblResultado.Text = $"Simulación: {operacion} para el valor {valor}";
+            lblResultado.Text = "Procesando...";
+            btnConvertir.Enabled = false;
+
+            try
+            {
+                var proxy = new CLIESC_ConUni_DotNet_GR6.MiServicio.Service1Client();
+                string operacion = cmbOperacion.SelectedItem.ToString();
+                double resultado = 0;
+
+                switch (operacion)
+                {
+                    // LONGITUD
+                    case "Kilometros a Metros": resultado = await proxy.KmAMetrosAsync(valor); break;
+                    case "Metros a Centimetros": resultado = await proxy.MetrosACmAsync(valor); break;
+                    case "Pulgadas a Centimetros": resultado = await proxy.PulgadasACmAsync(valor); break;
+                    case "Pies a Metros": resultado = await proxy.PiesAMetrosAsync(valor); break;
+                    case "Millas a Kilometros": resultado = await proxy.MillasAKmAsync(valor); break;
+
+                    // TEMPERATURA
+                    case "Celsius a Fahrenheit": resultado = await proxy.CelsiusAFahrenheitAsync(valor); break;
+                    case "Fahrenheit a Celsius": resultado = await proxy.FahrenheitACelsiusAsync(valor); break;
+                    case "Celsius a Kelvin": resultado = await proxy.CelsiusAKelvinAsync(valor); break;
+                    case "Kelvin a Celsius": resultado = await proxy.KelvinACelsiusAsync(valor); break;
+                    case "Fahrenheit a Kelvin": resultado = await proxy.FahrenheitAKelvinAsync(valor); break;
+                    case "Kelvin a Fahrenheit": resultado = await proxy.KelvinAFahrenheitAsync(valor); break;
+
+                    // MASA
+                    case "Kilogramos a Gramos": resultado = await proxy.KgAGramosAsync(valor); break;
+                    case "Gramos a Kilogramos": resultado = await proxy.GramosAMgAsync(valor); break; // Asegúrate de que el nombre del método coincida con lo necesario, el WS dice GramosAMg
+                    case "Libras a Kilogramos": resultado = await proxy.LibrasAKgAsync(valor); break;
+                    case "Onzas a Gramos": resultado = await proxy.OnzasAGramosAsync(valor); break;
+                }
+
+                lblResultado.Text = resultado.ToString("G");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al contactar el servicio: {ex.Message}", "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblResultado.Text = "Error.";
+            }
+            finally
+            {
+                btnConvertir.Enabled = true;
+            }
         }
     }
 }
