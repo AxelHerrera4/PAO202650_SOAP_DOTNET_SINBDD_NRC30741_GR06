@@ -1,10 +1,9 @@
 export default {
   server: {
     proxy: {
-      '/api': {
-        target: 'http://localhost:62638',
+      '/Service1.svc': {
+        target: 'http://10.40.26.222:8080',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
   },

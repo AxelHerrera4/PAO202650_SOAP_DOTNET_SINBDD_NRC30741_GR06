@@ -1,4 +1,4 @@
-export const WS_URL = '/api/Service1.svc'
+export const WS_URL = '/Service1.svc'
 
 export const OPERACIONES_LONGITUD = [
   { code: 'km_m',  label: 'Kilometros a Metros',       method: 'KmAMetros',      param: 'kilometros' },

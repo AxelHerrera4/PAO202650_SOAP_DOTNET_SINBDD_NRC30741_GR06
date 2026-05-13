@@ -225,7 +225,7 @@ namespace MiServicio
         {
             if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_IService1))
             {
-                return new System.ServiceModel.EndpointAddress("http://192.168.1.12:8080/Service1.svc");
+                return new System.ServiceModel.EndpointAddress("http://10.40.26.222:8080/Service1.svc");
             }
             throw new System.InvalidOperationException(string.Format("No se pudo encontrar un punto de conexión con el nombre \"{0}\".", endpointConfiguration));
         }
