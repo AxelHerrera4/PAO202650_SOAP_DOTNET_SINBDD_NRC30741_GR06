@@ -1,29 +1,33 @@
 ﻿using System;
+using ec.edu.monster.modelo;
+using ec.edu.monster.controlador;
 
 namespace ws_ConUni_DotNet_GR6
 {
     public class Service1 : IService1
     {
+        private readonly ec.edu.monster.controlador.Service1 _controller = new ec.edu.monster.controlador.Service1();
+
         // ============ TEMPERATURA ============
-        public double CelsiusAFahrenheit(double celsius) => (celsius * 9 / 5) + 32;
-        public double FahrenheitACelsius(double fahrenheit) => (fahrenheit - 32) * 5 / 9;
-        public double CelsiusAKelvin(double celsius) => celsius + 273.15;
-        public double KelvinACelsius(double kelvin) => kelvin - 273.15;
-        public double FahrenheitAKelvin(double fahrenheit) => (fahrenheit - 32) * 5 / 9 + 273.15;
-        public double KelvinAFahrenheit(double kelvin) => (kelvin - 273.15) * 9 / 5 + 32;
+        public double CelsiusAFahrenheit(double celsius) => _controller.CelsiusAFahrenheit(celsius);
+        public double FahrenheitACelsius(double fahrenheit) => _controller.FahrenheitACelsius(fahrenheit);
+        public double CelsiusAKelvin(double celsius) => _controller.CelsiusAKelvin(celsius);
+        public double KelvinACelsius(double kelvin) => _controller.KelvinACelsius(kelvin);
+        public double FahrenheitAKelvin(double fahrenheit) => _controller.FahrenheitAKelvin(fahrenheit);
+        public double KelvinAFahrenheit(double kelvin) => _controller.KelvinAFahrenheit(kelvin);
 
         // ============ LONGITUD ============
-        public double KmAMetros(double kilometros) => kilometros * 1000;
-        public double MetrosACm(double metros) => metros * 100;
-        public double PulgadasACm(double pulgadas) => pulgadas * 2.54;
-        public double PiesAMetros(double pies) => pies * 0.3048;
-        public double MillasAKm(double millas) => millas * 1.60934;
+        public double KmAMetros(double kilometros) => _controller.KmAMetros(kilometros);
+        public double MetrosACm(double metros) => _controller.MetrosACm(metros);
+        public double PulgadasACm(double pulgadas) => _controller.PulgadasACm(pulgadas);
+        public double PiesAMetros(double pies) => _controller.PiesAMetros(pies);
+        public double MillasAKm(double millas) => _controller.MillasAKm(millas);
 
         // ============ MASA ============
-        public double KgAGramos(double kilogramos) => kilogramos * 1000;
-        public double GramosAMg(double gramos) => gramos * 1000;
-        public double LibrasAKg(double libras) => libras * 0.453592;
-        public double OnzasAGramos(double onzas) => onzas * 28.3495;
-        public double ToneladasAKg(double toneladas) => toneladas * 1000;
+        public double KgAGramos(double kilogramos) => _controller.KgAGramos(kilogramos);
+        public double GramosAMg(double gramos) => _controller.GramosAMg(gramos);
+        public double LibrasAKg(double libras) => _controller.LibrasAKg(libras);
+        public double OnzasAGramos(double onzas) => _controller.OnzasAGramos(onzas);
+        public double ToneladasAKg(double toneladas) => _controller.ToneladasAKg(toneladas);
     }
 }

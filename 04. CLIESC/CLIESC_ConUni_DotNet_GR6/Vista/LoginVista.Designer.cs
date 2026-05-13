@@ -1,6 +1,6 @@
-﻿namespace CLIESC_ConUni_DotNet_GR6
+﻿namespace CLIESC_ConUni_DotNet_GR6.ec.edu.monster.vista
 {
-    partial class Form1
+    partial class LoginVista
     {
         /// <summary>
         /// Variable del diseñador necesaria.

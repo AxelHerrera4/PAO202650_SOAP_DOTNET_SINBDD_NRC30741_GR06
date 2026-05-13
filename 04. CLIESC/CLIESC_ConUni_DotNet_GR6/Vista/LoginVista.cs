@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CLIESC_ConUni_DotNet_GR6
+namespace CLIESC_ConUni_DotNet_GR6.ec.edu.monster.vista
 {
-    public partial class Form1 : Form
+    public partial class LoginVista : Form
     {
-        public Form1()
+        public LoginVista()
         {
             InitializeComponent();
         }
@@ -21,7 +21,7 @@ namespace CLIESC_ConUni_DotNet_GR6
         {
             if (txtUsuario.Text == "monster" && txtPass.Text == "monster9")
             {
-                FormConversor formConversor = new FormConversor();
+                ConversorVista formConversor = new ConversorVista();
                 this.Hide();
                 formConversor.FormClosed += (s, args) => this.Show();
                 formConversor.Show();

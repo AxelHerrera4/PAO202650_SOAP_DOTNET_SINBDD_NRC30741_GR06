@@ -1,6 +1,6 @@
-namespace CLIESC_ConUni_DotNet_GR6
+namespace CLIESC_ConUni_DotNet_GR6.ec.edu.monster.vista
 {
-    partial class FormConversor
+    partial class ConversorVista
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -247,7 +247,7 @@ namespace CLIESC_ConUni_DotNet_GR6
             this.Controls.Add(this.panelTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "FormConversor";
+            this.Name = "ConversorVista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Monster | Conversor";
             this.panelTop.ResumeLayout(false);

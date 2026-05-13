@@ -53,17 +53,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="ec.edu.monster.modelo\Categoria.cs" />
+    <Compile Include="ec.edu.monster.modelo\Conversion.cs" />
+    <Compile Include="ec.edu.monster.modelo\Operacion.cs" />
+    <Compile Include="ec.edu.monster.controlador\ConversorControlador.cs" />
+    <Compile Include="ec.edu.monster.vista\ConversorVista.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ec.edu.monster.vista\ConversorVista.Designer.cs">
+      <DependentUpon>ConversorVista.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormConversor.cs">
+    <Compile Include="ec.edu.monster.vista\LoginVista.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormConversor.Designer.cs">
-      <DependentUpon>FormConversor.cs</DependentUpon>
+    <Compile Include="ec.edu.monster.vista\LoginVista.Designer.cs">
+      <DependentUpon>LoginVista.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
